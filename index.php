@@ -1,3 +1,10 @@
+<?php
+
+require('includes/connectdb.php');
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
