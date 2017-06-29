@@ -1,6 +1,6 @@
 <?php
 
-require('includes/connectdb.php');
+require('includes/core.inc.php');
 
 
 ?>
@@ -19,37 +19,67 @@ require('includes/connectdb.php');
   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
   	<script type="text/javascript" src="scripts/angular.js"></script>
 </head>
-<body ng-app='myApp' >
+<body  >
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
+  <div class="container-fluid" style="margin: 20px;">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="#">PHP</a>
+      <a class="navbar-brand" href="#" ><strong>OUROBOROS</strong></a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar" margint>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Downloads</a></li>
-        <li><a href="#">Forum</a></li> 
-        <li><a href="#">Contact Us</a></li> 
-      </ul>
-      
+    <div class="collapse navbar-collapse" id="myNavbar" >
+      <<form class="navbar-form navbar-right" action="" method="POST">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Username" name="Username">
+        <input type="password" class="form-control"  placeholder="Password" name="Password">
+      </div>
+      <button type="submit" class="btn btn-success" name="login">Log In</button><br>
+        <a href="#" style="margin-top: 10px;">Forgotten Password?</a> 
+    </form>
+     
+     
     </div>
   </div>
 </nav><!--Navbar Ended-->
 
 
+ 
+<div class="jumbotron" id='main' style="height: 100vh;">
 
-<div class="container-fluid" id="login" ng-view>
-	
+  <div class="col-sm-8">
+    
+  </div>
 
+  <div class="col-sm-4" >
+
+    <h2><strong>Create a new account</strong></h2>
+    <p>It's Free and always will be.</p>
+
+    <form action="" method="POST">
+     
+    <input type="text" class="form-control" name="username" placeholder="User name">  
+    <input type="text" class="form-control" name="firstname" placeholder="First name">
+    <input type="text" class="form-control" name="lastname" placeholder="Last name">
+    <input type="text" class="form-control" name="email" placeholder="Email Address">
+    <input type="password" class="form-control" name="password" placeholder="Password">
+    <select style="margin-left: 7px;" name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <br><br>
+    <button type="submit" name="Submit" class="btn-success btn text-center"><strong>Create Account</strong></button>
+
+
+    </form>
+    
+  </div>
+     
 </div>
-
+  
 
 
 

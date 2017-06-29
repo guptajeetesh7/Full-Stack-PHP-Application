@@ -24,7 +24,7 @@ if($connection = mysql_connect($db_host, $db_user, $db_pass)){
 
 			$feedback[] =  "Database Selected ..<br>";
 
-			$query = 'CREATE TABLE `data` ( `id` INT NOT NULL AUTO_INCREMENT , `username` VARCHAR(100) NOT NULL , `password` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;';
+			$query = 'CREATE TABLE `data` ( `id` INT NOT NULL AUTO_INCREMENT , `username` VARCHAR(30) NOT NULL , `firstname` VARCHAR(30) NOT NULL , `lastname` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `password` VARCHAR(33) NOT NULL , `gender` VARCHAR(10) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;';
 
 
 
@@ -47,5 +47,7 @@ if($connection = mysql_connect($db_host, $db_user, $db_pass)){
 }else{
 	echo "Unable to connect to database server..";
 }
+
+
 
 ?>
