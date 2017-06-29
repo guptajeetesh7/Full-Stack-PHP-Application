@@ -87,7 +87,7 @@ require('includes/home.inc.php');
               </div>
 
 
-              <div class="row blog text-center" ng-repeat="post in posts | filter:search" >
+              <div class="row blog text-center" ng-repeat="post in posts | filter:search as filtered_result " >
 
 
                   
@@ -100,7 +100,7 @@ require('includes/home.inc.php');
 
               </div>
 
-              <div class="blog text-center"  ng-show="!{{(posts|filter:search).length}}">No other such posts</div>
+              <div class="blog text-center"  ng-show="filtered_result.length==0">No other such posts</div>
              
         </div>   
 
