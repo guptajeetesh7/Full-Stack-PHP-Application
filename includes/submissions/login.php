@@ -4,7 +4,7 @@
 
 function loggedin(){
 
-if(isset($_SESSION['username']) and !empty($_SESSION['username'])){
+if(isset($_SESSION['firstname']) and !empty($_SESSION['firstname'])){
 
 	return true;
 

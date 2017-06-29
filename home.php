@@ -2,6 +2,8 @@
 
 session_start();
 
+
+
 require('includes/home.inc.php');
 
 
