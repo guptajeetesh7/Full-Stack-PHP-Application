@@ -15,13 +15,18 @@ require('includes/core.inc.php');
 	<title>Full Stack Appliation</title>
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
+
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
   	<script type="text/javascript" src="scripts/angular.js"></script>
+
 </head>
 <body  >
 
@@ -33,7 +38,7 @@ require('includes/core.inc.php');
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="#" ><strong>OUROBOROS</strong></a>
+      <a class="navbar-brand" href="#" ><strong>Opinion Donkey</strong></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" >
       <<form class="navbar-form navbar-right" action="" method="POST">
@@ -54,8 +59,14 @@ require('includes/core.inc.php');
  
 <div class="jumbotron" id='main' style="height: 100vh;">
 
-  <div class="col-sm-8">
-    
+  <div class="col-sm-2">
+  </div>
+
+  <div class="col-sm-6">
+    <h2>Login Via </h2>
+    <br>
+    <button class="btn btn-info btn-lg"><i class="fa fa-facebook-official" style="margin-right: 10px;"></i>Facebook</button><br><br>
+    <button class="btn btn-danger btn-lg"><i class="fa fa-google-plus" style="margin-right: 10px;"></i>Google</button><br>
   </div>
 
   <div class="col-sm-4" >

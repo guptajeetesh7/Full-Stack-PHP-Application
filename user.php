@@ -1,12 +1,7 @@
 <?php
-
 session_start();
 
-$dir = __DIR__;
-
-
-require('includes/home.inc.php');
-
+require('includes/user.inc.php');
 
 ?>
 
@@ -23,9 +18,10 @@ require('includes/home.inc.php');
     <link rel="stylesheet" type="text/css" href="css/home.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-
-    <script type="text/javascript" src="js/angular.js"></script>
+    
+    <script type="text/javascript" src="js/homecontroller.js"></script>
 </head>
+
 <body  ng-app='myApp'>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -36,7 +32,7 @@ require('includes/home.inc.php');
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="#"><strong>Opinion Donkey</strong></a>
+      <a class="navbar-brand" href="index.php"><strong>Opinion Donkey</strong></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <form class="navbar-form navbar-left">
@@ -59,9 +55,7 @@ require('includes/home.inc.php');
 
 
 
-
- 
-<div class="container-fluid" id='main' ng-controller="posts" >
+<div class="container-fluid" id='main' ng-controller="homecontroller" >
 
      <div class="col-sm-4 ">
        
@@ -69,45 +63,23 @@ require('includes/home.inc.php');
 
      <div class="col-sm-4 ">
 
-             <div class="row blog text-center">
-
-                 <h3 >Create a Post</h3><hr>
-
-                 <form method="POST" action="" enctype="multipart/form-data" > 
-
-                  <textarea type="text" name="post" placeholder="Write Something."></textarea><hr>
-                  
-                 
-                   
-                  <input type="file" name="file" >                
-                  
-
-                  <input type="submit" name="submit" value="POST" class="btn btn-success" >
-
-                </form>
-                 
-                
-
-              </div>
+            
 
 
-              <div class="row blog text-center" ng-repeat="post in posts | filter:search as filtered_result " >
+              <div class="row blog text-center" ng-repeat="post in sharedposts  " >
 
 
                   
-                  <h3>{{post.person}}</h3> <hr>
+                  <h3><?php echo $_SESSION['firstname']  ?> Shared <span style="margin-left: 20px;">{{post.person}}'s Post</span></h3><hr>
 
-                  <p>{{post.text}} </p>
-                  
+                  <p>{{post.text}}</p>
 
                   <img src="{{post.image}}" id="post_image">
-
-                  <button class="btn btn-success" ng-click="share(post.person , post.text , post.image)" >SHARE</button>
                   
 
               </div>
 
-              <div class="blog text-center"  ng-show="filtered_result.length==0">No other such posts</div>
+              <div class="blog text-center"  ng-show="filtered_result.length==0">No other such shared</div>
              
         </div>   
 

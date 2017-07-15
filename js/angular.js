@@ -5,6 +5,8 @@ app.controller('posts',function($scope,$http,$interval){
 		$scope.posts = [];
 
 
+
+
 $interval(function(){
 
 			$http({
@@ -12,9 +14,8 @@ $interval(function(){
 		        url : "includes/submissions/getposts.php"
 		    }).then(function mySuccess(response) {
 		        
-		    	$scope.posts = response.data;
-
-		    	
+	    	$scope.posts = response.data;
+	
 
 		    }, 
 
@@ -27,10 +28,16 @@ $interval(function(){
 
 },1000);
 
+$scope.share = function(person , text , image)	{
 
+	$http.post('includes/sharepost/sharepost.php',{ 'person' : person , 'text' : text , 'image' : image }).then(function(){
 
-
-
+		alert('Post shared');
+ 
+	},function(){
+		alert('Problem');
+	});
+}	
 
 
 

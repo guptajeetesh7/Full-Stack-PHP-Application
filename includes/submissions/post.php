@@ -1,5 +1,10 @@
 <?php
 
+$location = '/uploads/';
+
+
+
+
 if(isset($_POST['submit'])){
 
 	$post = $_POST['post'];
@@ -14,7 +19,7 @@ if(isset($_POST['submit'])){
 
 	
 
-
+	
 
 	$query = "INSERT INTO `posts` VALUES (null ,'$person' ,'$post' ,'$target')";
 	
@@ -25,21 +30,21 @@ if(isset($_POST['submit'])){
 
 		if($query_run =  mysql_query($query)){
 
-			echo "<script type='text/javascript'>alert('To the database ');</script>";
+			//echo "<script type='text/javascript'>alert('To the database   ');</script>";
 		}else{
 			echo "<script type='text/javascript'>alert('Failed to database ');</script>";
 		}
 
-		$location = 'uploads/';		
+				
 
-		if(move_uploaded_file($tmp_name, $location.$file_name))
+		if(move_uploaded_file($tmp_name,'uploads/'.$file_name))
 											{
-												echo "<script type='text/javascript'>alert('File uploaded ');</script>";
+												echo "<script type='text/javascript'>alert('File on Server ');</script>";
 
 											}
 										else
 											{
-												echo "<script type='text/javascript'>alert('Server Down');</script>";
+												echo "<script type='text/javascript'>alert(' File Not uploaded  ');</script>";
 											}
 
 		
