@@ -18,15 +18,15 @@
 
 			$hash = md5($password);
 
-			$query = "SELECT  `username`  FROM  `data`  WHERE  `username`  =  '$username' ";
+			$query = "SELECT  `username`  FROM  `data`  WHERE  `username`  =  '$username' OR `email` = '$email' ";
 
 
  			$query_run = mysql_query($query);
 
- 			if(mysql_num_rows($query_run) == 1){
+ 			if(mysql_num_rows($query_run) >= 1){
 
 
- 						echo "<script type='text/javascript'>alert('Username Already Taken');</script>";
+ 						echo "<script type='text/javascript'>alert('Username or Email Already Regsitered');</script>";
 	 		}else{
 
 
